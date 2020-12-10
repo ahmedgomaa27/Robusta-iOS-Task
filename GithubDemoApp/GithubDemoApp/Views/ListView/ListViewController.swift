@@ -7,15 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
 
     let searchController = UISearchController()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NetworkManager.getRepositoriesWithCompletion { (list) in
-            print(list)
-        }
         setupSearchController()
     }
 
@@ -29,7 +26,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UISearchBarDelegate {
+extension ListViewController: UISearchBarDelegate {
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         //TODO: return to default data
