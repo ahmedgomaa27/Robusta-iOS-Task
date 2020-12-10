@@ -27,12 +27,8 @@
                                                                 NSURLResponse * _Nullable response,
                                                                 NSError * _Nullable error) {
                                                 if (!error) {
+                                                    //TODO: need fix here
                                                     NSError *jsonError = nil;
-                                                    NSArray *responseDictionary =
-                                                    [NSJSONSerialization JSONObjectWithData:data
-                                                                                    options:kNilOptions
-                                                                                      error:&jsonError];
-                                                    NSLog(@"Response: %@", responseDictionary);
                                                     NSString * jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                                        RepositoryList *repositoryList = RepositoryListFromJSON(jsonString, NSUTF8StringEncoding, &jsonError);
                                                     completion(repositoryList);

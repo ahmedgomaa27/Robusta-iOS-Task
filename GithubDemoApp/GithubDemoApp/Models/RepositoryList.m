@@ -5,13 +5,13 @@
 //  Created by Ahmed Hamdy on 10/12/2020.
 //
 
-
 // RepositoryList.m
-// I used quickType auto generated Model
-
+//Note: I used https://app.quicktype.io/ auto generated Model
 #import "RepositoryList.h"
 
 #define λ(decl, expr) (^(decl) { return (expr); })
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface RepositoryListElement (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
