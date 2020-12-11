@@ -119,6 +119,21 @@
             </objects>
             <point key="canvasLocation" x="976.81159420289862" y="71.651785714285708"/>
         </scene>
+        <!--Repository Details Controller-->
+        <scene sceneID="HeV-TF-d2z">
+            <objects>
+                <viewController id="Zeo-6I-9Jy" customClass="RepositoryDetailsController" customModule="GithubDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yuo-YO-Wpf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NlF-VS-bd4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3I-UC-KSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741" y="-4"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="NHc-wl-3cD">
             <objects>

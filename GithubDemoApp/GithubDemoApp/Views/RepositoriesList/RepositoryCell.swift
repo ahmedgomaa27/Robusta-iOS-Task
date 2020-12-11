@@ -14,10 +14,10 @@ class RepositoryCell: UITableViewCell {
     @IBOutlet weak var ownerLabel: UILabel!
 
 
-    func setup(item: RepositoryListElement) {
+    func setup(item: Repository) {
         repositoryNameLabel.text = item.name
         ownerLabel.text = item.owner.login
-        ImageDownloader.loadImage(imageUrlPath: item.owner.avatarURL) { (image) in
+        ImageDownloader.loadImage(imageUrlPath: item.owner.avatarUrl) { (image) in
             DispatchQueue.main.async {
                 self.repoImageView.image = image
             }
