@@ -11,7 +11,7 @@
 
 @implementation NetworkManager: NSObject
 
-+(void) getRepositoriesWithCompletion: (void(RepositoryList* list)) completion {
++(void) getRepositoriesWithCompletion: (void(^)(RepositoryList* list)) completion {
     NSString *urlString = @"https://api.github.com/repositories";
 
     NSURL *url = [NSURL URLWithString:urlString];

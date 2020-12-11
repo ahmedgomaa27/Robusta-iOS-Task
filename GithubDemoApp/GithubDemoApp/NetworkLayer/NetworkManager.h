@@ -11,6 +11,6 @@
 #define NetworkManager_h
 
 @interface NetworkManager : NSObject
-+(void) getRepositoriesWithCompletion: (void(RepositoryList*)) completion;
++(void) getRepositoriesWithCompletion: (void(^)(RepositoryList*)) completion;
 @end
 #endif /* NetworkManager_h */

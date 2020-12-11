@@ -18,7 +18,7 @@ class ListViewPresenter {
 
     func fetchReposData() {
         view.showLoading()
-        NetworkManager.getRepositoriesWithCompletion {[weak self] (list) in
+        NetworkManager.getRepositoriesWithCompletion { [weak self] (list) in
             guard let self = self else {return}
             self.view.hideLoading()
             if let reposList = list {
