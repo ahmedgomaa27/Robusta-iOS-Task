@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i2B-ge-xni">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,12 +14,116 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="GithubDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tx2-Lw-svR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryCell" id="sLL-Ru-o65" customClass="RepositoryCell" customModule="GithubDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="143"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sLL-Ru-o65" id="56l-7c-bGA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIj-nh-vKB">
+                                                    <rect key="frame" x="16" y="16" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="JIj-nh-vKB" secondAttribute="height" multiplier="1:1" id="YTK-jX-GsX"/>
+                                                        <constraint firstAttribute="height" constant="70" id="tS7-9v-6K9"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                            <real key="value" value="35"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                            <color key="value" systemColor="systemGray3Color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="repo name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-PU-E5q" userLabel="repo name">
+                                                    <rect key="frame" x="107" y="16" width="93.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-00-vP4">
+                                                    <rect key="frame" x="107" y="48" width="173" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vam-OG-3Ts">
+                                                    <rect key="frame" x="20" y="98" width="82" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KbG-00-vP4" secondAttribute="trailing" constant="134" id="78d-9o-cTq"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vam-OG-3Ts" secondAttribute="trailing" constant="4" id="7rx-9O-uc5"/>
+                                                <constraint firstItem="JIj-nh-vKB" firstAttribute="leading" secondItem="56l-7c-bGA" secondAttribute="leading" constant="16" id="HZ6-N7-fff"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kgh-PU-E5q" secondAttribute="trailing" constant="4" id="O15-I2-aGI"/>
+                                                <constraint firstItem="Vam-OG-3Ts" firstAttribute="top" secondItem="JIj-nh-vKB" secondAttribute="bottom" constant="12" id="RL5-Hk-YVl"/>
+                                                <constraint firstItem="Vam-OG-3Ts" firstAttribute="leading" secondItem="56l-7c-bGA" secondAttribute="leadingMargin" id="RSp-Qu-Z29"/>
+                                                <constraint firstItem="KbG-00-vP4" firstAttribute="top" secondItem="kgh-PU-E5q" secondAttribute="bottom" constant="8" id="bCe-9x-czS"/>
+                                                <constraint firstItem="JIj-nh-vKB" firstAttribute="top" secondItem="56l-7c-bGA" secondAttribute="top" constant="16" id="dZc-x7-3OB"/>
+                                                <constraint firstItem="kgh-PU-E5q" firstAttribute="leading" secondItem="JIj-nh-vKB" secondAttribute="trailing" constant="21" id="fLo-Bo-FgN"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vam-OG-3Ts" secondAttribute="bottom" constant="24" id="jxe-Z9-vhW"/>
+                                                <constraint firstItem="KbG-00-vP4" firstAttribute="leading" secondItem="kgh-PU-E5q" secondAttribute="leading" id="piX-bi-JsF"/>
+                                                <constraint firstItem="kgh-PU-E5q" firstAttribute="top" secondItem="JIj-nh-vKB" secondAttribute="top" id="rLk-xw-Jra"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Vam-OG-3Ts" id="dXo-TR-qRX"/>
+                                            <outlet property="ownerLabel" destination="KbG-00-vP4" id="V8l-Wc-cad"/>
+                                            <outlet property="repoImageView" destination="JIj-nh-vKB" id="Zab-rh-k3q"/>
+                                            <outlet property="repositoryNameLabel" destination="kgh-PU-E5q" id="34X-A9-A5m"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="4Wz-S1-6Yu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uZ1-iw-ME9"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kwO-Wz-dhS">
+                                <rect key="frame" x="167" y="435" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kwO-Wz-dhS" secondAttribute="height" multiplier="1:1" id="8y5-tY-9Op"/>
+                                    <constraint firstAttribute="height" constant="80" id="uON-xv-f1K"/>
+                                </constraints>
+                                <color key="color" systemColor="systemBlueColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tx2-Lw-svR" secondAttribute="trailing" id="8aR-Cd-POW"/>
+                            <constraint firstItem="kwO-Wz-dhS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="N1W-aX-gBI"/>
+                            <constraint firstItem="tx2-Lw-svR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R5d-AZ-mzV"/>
+                            <constraint firstItem="kwO-Wz-dhS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dd4-AI-EAd"/>
+                            <constraint firstItem="tx2-Lw-svR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hjq-p4-MCx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tx2-Lw-svR" secondAttribute="bottom" id="ybn-9g-hHb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GitHub Repositories" id="Jjd-MI-xL7"/>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="kwO-Wz-dhS" id="3hF-O5-7eg"/>
+                        <outlet property="repositoriesTableView" destination="tx2-Lw-svR" id="oqm-C6-Ulj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,6 +151,15 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
