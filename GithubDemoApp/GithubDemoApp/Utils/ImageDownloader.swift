@@ -15,11 +15,7 @@ class ImageDownloader {
                 guard let data = data, error == nil else {
                     return
                 }
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                print("Download Finished")
-                DispatchQueue.main.async() {
-                    completion(UIImage(data: data))
-                }
+                completion(UIImage(data: data))
             }.resume()
         }
     }

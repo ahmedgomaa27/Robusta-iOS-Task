@@ -11,4 +11,5 @@ protocol ListViewDelegate: class {
     func showLoading()
     func hideLoading()
     func refreshView()
+    func showNetworkError()
 }

@@ -26,6 +26,8 @@ class ListViewPresenter {
                 self.dataModel.append(contentsOf: reposList)
                 self.filterModel.append(contentsOf: reposList)
                 self.view.refreshView()
+            } else {
+                self.view.showNetworkError()
             }
         }
     }

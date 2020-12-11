@@ -10,6 +10,7 @@
 		8C6433652583A1100020F386 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433642583A1100020F386 /* RepositoryCell.swift */; };
 		8C64336B2583A6840020F386 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64336A2583A6840020F386 /* ImageDownloader.swift */; };
 		8C6433742583A90B0020F386 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433732583A90B0020F386 /* UIViewExtension.swift */; };
+		8C64337C2583B2100020F386 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64337B2583B2100020F386 /* DateUtils.swift */; };
 		8C7D3E79258186B100EC3259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E78258186B100EC3259 /* AppDelegate.swift */; };
 		8C7D3E7B258186B100EC3259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */; };
 		8C7D3E7D258186B100EC3259 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E7C258186B100EC3259 /* ListViewController.swift */; };
@@ -45,6 +46,7 @@
 		8C6433642583A1100020F386 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		8C64336A2583A6840020F386 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		8C6433732583A90B0020F386 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8C64337B2583B2100020F386 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		8C7D3E75258186B100EC3259 /* GithubDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7D3E78258186B100EC3259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				8C64336A2583A6840020F386 /* ImageDownloader.swift */,
+				8C64337B2583B2100020F386 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C64337C2583B2100020F386 /* DateUtils.swift in Sources */,
 				8C6433742583A90B0020F386 /* UIViewExtension.swift in Sources */,
 				8C7D3EC025818AD800EC3259 /* NetworkManager.m in Sources */,
 				8C7D3E7D258186B100EC3259 /* ListViewController.swift in Sources */,

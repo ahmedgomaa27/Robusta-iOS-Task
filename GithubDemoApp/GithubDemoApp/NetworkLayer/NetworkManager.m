@@ -39,4 +39,30 @@
     [task resume];
 }
 
++(void) getRepositoryDateFromUrl:(NSString*) urlString completion: (void(^)(NSString* dateString)) completion {
+
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+    NSURLSession *session =
+    [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+                                  delegate:nil
+                             delegateQueue:[NSOperationQueue mainQueue]];
+
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler:^(NSData * _Nullable data,
+                                                                NSURLResponse * _Nullable response,
+                                                                NSError * _Nullable error) {
+                                                if (!error) {
+                                                    NSError *jsonError = nil;
+                                                    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                                                    NSString* dateString = [json valueForKey:@"created_at"];
+                                                    completion(dateString);
+                                                } else {
+                                                    NSLog(@"An error occurred: %@", error.description);
+                                                }
+                                            }];
+    [task resume];
+}
+
 @end

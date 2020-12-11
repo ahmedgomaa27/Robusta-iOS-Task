@@ -69,4 +69,14 @@ extension ListViewController: ListViewDelegate {
     func refreshView() {
         repositoriesTableView.reloadData()
     }
+
+    func showNetworkError() {
+        let alert = UIAlertController(title: "Error", message: "Something went wrong, please try again later", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Reload",
+                                      style: UIAlertAction.Style.default,
+                                      handler: { _ in
+                                        self.presenter.fetchReposData()
+                                      }))
+        present(alert, animated: true, completion: nil)
+    }
 }
