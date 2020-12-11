@@ -6,12 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RepositoryList.h"
-#ifndef NetworkManager_h
-#define NetworkManager_h
+#import "Repository.h"
 
 @interface NetworkManager : NSObject
-+(void) getRepositoriesWithCompletion: (void(^)(RepositoryList*)) completion;
++(void) getRepositoriesWithCompletion: (void(^)(NSArray<Repository*>* list)) completion;
 +(void) getRepositoryDateFromUrl:(NSString*) urlString completion: (void(^)(NSString* dateString)) completion;
 @end
-#endif /* NetworkManager_h */

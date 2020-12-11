@@ -10,8 +10,8 @@ import Foundation
 class ListViewPresenter {
 
     weak var view: ListViewDelegate!
-    var dataModel: [RepositoryListElement] = []
-    var filterModel: [RepositoryListElement] = []
+    var dataModel: [Repository] = []
+    var filterModel: [Repository] = []
 
     init(view: ListViewDelegate) {
         self.view = view
@@ -32,7 +32,7 @@ class ListViewPresenter {
         }
     }
 
-    func getItem(for index: Int) -> RepositoryListElement {
+    func getItem(for index: Int) -> Repository {
         filterModel[index]
     }
 

@@ -7,11 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "NetworkManager.h"
-#import "RepositoryList.h"
+#import "Repository.h"
 
 @implementation NetworkManager: NSObject
 
-+(void) getRepositoriesWithCompletion: (void(^)(RepositoryList* list)) completion {
++(void) getRepositoriesWithCompletion: (void(^)(NSArray<Repository*>* list)) completion {
     NSString *urlString = @"https://api.github.com/repositories";
 
     NSURL *url = [NSURL URLWithString:urlString];
@@ -29,9 +29,15 @@
                                                 if (!error) {
                                                     //TODO: need fix here
                                                     NSError *jsonError = nil;
-                                                    NSString * jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                                       RepositoryList *repositoryList = RepositoryListFromJSON(jsonString, NSUTF8StringEncoding, &jsonError);
-                                                    completion(repositoryList);
+                                                    NSArray * jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];;
+
+                                                    NSMutableArray *parsedList = [NSMutableArray array];
+                                                    for (NSDictionary *item in jsonArray) {
+                                                        if ([item isKindOfClass:[NSDictionary class]]) {
+                                                            [parsedList addObject:[Repository modelObjectWithDictionary:item]];
+                                                        }
+                                                   }
+                                                    completion(parsedList);
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
                                                 }

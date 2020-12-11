@@ -11,6 +11,9 @@
 		8C64336B2583A6840020F386 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64336A2583A6840020F386 /* ImageDownloader.swift */; };
 		8C6433742583A90B0020F386 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433732583A90B0020F386 /* UIViewExtension.swift */; };
 		8C64337C2583B2100020F386 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64337B2583B2100020F386 /* DateUtils.swift */; };
+		8C64338A2583E6700020F386 /* RepositoryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433892583E6700020F386 /* RepositoryDetailsController.swift */; };
+		8C6433982583EA310020F386 /* Owner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433972583EA310020F386 /* Owner.m */; };
+		8C64339E2583EAE50020F386 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C64339D2583EAE50020F386 /* Repository.m */; };
 		8C7D3E79258186B100EC3259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E78258186B100EC3259 /* AppDelegate.swift */; };
 		8C7D3E7B258186B100EC3259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */; };
 		8C7D3E7D258186B100EC3259 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E7C258186B100EC3259 /* ListViewController.swift */; };
@@ -20,7 +23,6 @@
 		8C7D3E90258186B700EC3259 /* GithubDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E8F258186B700EC3259 /* GithubDemoAppTests.swift */; };
 		8C7D3E9B258186B700EC3259 /* GithubDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E9A258186B700EC3259 /* GithubDemoAppUITests.swift */; };
 		8C7D3EC025818AD800EC3259 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3EBF25818AD800EC3259 /* NetworkManager.m */; };
-		8C7D3EE2258195C500EC3259 /* RepositoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3EE1258195C500EC3259 /* RepositoryList.m */; };
 		8C7D3EF025819D9100EC3259 /* ListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3EEF25819D9100EC3259 /* ListViewPresenter.swift */; };
 		8C7D3EF525819DA800EC3259 /* ListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3EF425819DA800EC3259 /* ListViewDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,11 @@
 		8C64336A2583A6840020F386 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		8C6433732583A90B0020F386 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8C64337B2583B2100020F386 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		8C6433892583E6700020F386 /* RepositoryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsController.swift; sourceTree = "<group>"; };
+		8C6433972583EA310020F386 /* Owner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Owner.m; sourceTree = "<group>"; };
+		8C64339C2583EA3D0020F386 /* Owner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Owner.h; sourceTree = "<group>"; };
+		8C64339D2583EAE50020F386 /* Repository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		8C6433A22583EAEF0020F386 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		8C7D3E75258186B100EC3259 /* GithubDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7D3E78258186B100EC3259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +71,6 @@
 		8C7D3EB22581883F00EC3259 /* GithubDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GithubDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C7D3EBF25818AD800EC3259 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		8C7D3EC425818B0B00EC3259 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
-		8C7D3EE02581956E00EC3259 /* RepositoryList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoryList.h; sourceTree = "<group>"; };
-		8C7D3EE1258195C500EC3259 /* RepositoryList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepositoryList.m; sourceTree = "<group>"; };
 		8C7D3EEF25819D9100EC3259 /* ListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewPresenter.swift; sourceTree = "<group>"; };
 		8C7D3EF425819DA800EC3259 /* ListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +115,14 @@
 				8C6433732583A90B0020F386 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C6433852583E60B0020F386 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8C6433892583E6700020F386 /* RepositoryDetailsController.swift */,
+			);
+			path = RepositoryDetails;
 			sourceTree = "<group>";
 		};
 		8C7D3E6C258186B100EC3259 = {
@@ -181,8 +194,10 @@
 		8C7D3ED62581926700EC3259 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8C7D3EE02581956E00EC3259 /* RepositoryList.h */,
-				8C7D3EE1258195C500EC3259 /* RepositoryList.m */,
+				8C6433972583EA310020F386 /* Owner.m */,
+				8C64339C2583EA3D0020F386 /* Owner.h */,
+				8C64339D2583EAE50020F386 /* Repository.m */,
+				8C6433A22583EAEF0020F386 /* Repository.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +213,8 @@
 		8C7D3EEA25819D0600EC3259 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C7D3EF925819DB300EC3259 /* ListView */,
+				8C6433852583E60B0020F386 /* RepositoryDetails */,
+				8C7D3EF925819DB300EC3259 /* RepositoriesList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,14 +228,14 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
-		8C7D3EF925819DB300EC3259 /* ListView */ = {
+		8C7D3EF925819DB300EC3259 /* RepositoriesList */ = {
 			isa = PBXGroup;
 			children = (
 				8C7D3E7C258186B100EC3259 /* ListViewController.swift */,
 				8C7D3EF425819DA800EC3259 /* ListViewDelegate.swift */,
 				8C6433642583A1100020F386 /* RepositoryCell.swift */,
 			);
-			path = ListView;
+			path = RepositoriesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,15 +371,17 @@
 			files = (
 				8C64337C2583B2100020F386 /* DateUtils.swift in Sources */,
 				8C6433742583A90B0020F386 /* UIViewExtension.swift in Sources */,
+				8C64338A2583E6700020F386 /* RepositoryDetailsController.swift in Sources */,
 				8C7D3EC025818AD800EC3259 /* NetworkManager.m in Sources */,
 				8C7D3E7D258186B100EC3259 /* ListViewController.swift in Sources */,
 				8C7D3E79258186B100EC3259 /* AppDelegate.swift in Sources */,
 				8C7D3EF025819D9100EC3259 /* ListViewPresenter.swift in Sources */,
-				8C7D3EE2258195C500EC3259 /* RepositoryList.m in Sources */,
 				8C7D3E7B258186B100EC3259 /* SceneDelegate.swift in Sources */,
 				8C7D3EF525819DA800EC3259 /* ListViewDelegate.swift in Sources */,
+				8C6433982583EA310020F386 /* Owner.m in Sources */,
 				8C64336B2583A6840020F386 /* ImageDownloader.swift in Sources */,
 				8C6433652583A1100020F386 /* RepositoryCell.swift in Sources */,
+				8C64339E2583EAE50020F386 /* Repository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
