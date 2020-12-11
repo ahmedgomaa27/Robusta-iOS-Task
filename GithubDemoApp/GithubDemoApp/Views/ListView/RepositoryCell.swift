@@ -12,7 +12,6 @@ class RepositoryCell: UITableViewCell {
     @IBOutlet weak var repoImageView: UIImageView!
     @IBOutlet weak var repositoryNameLabel: UILabel!
     @IBOutlet weak var ownerLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
 
 
     func setup(item: RepositoryListElement) {
@@ -23,19 +22,9 @@ class RepositoryCell: UITableViewCell {
                 self.repoImageView.image = image
             }
         }
-
-        NetworkManager.getRepositoryDate(fromUrl: item.url) { (dateString) in
-            if let date = dateString {
-                self.dateLabel.isHidden = false
-                self.dateLabel.text = "Created at: \(DateUtils.getRepositoryDateFormat(dateString: date))"
-            } else {
-                self.dateLabel.isHidden = true
-            }
-        }
     }
 
     override func prepareForReuse() {
-        dateLabel.text = ""
         repoImageView.image = nil
     }
 

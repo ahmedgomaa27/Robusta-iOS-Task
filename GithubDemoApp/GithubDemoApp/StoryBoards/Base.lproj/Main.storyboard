@@ -17,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tx2-Lw-svR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tx2-Lw-svR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="138.5" id="sLL-Ru-o65" customClass="RepositoryCell" customModule="GithubDemoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="138.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RepositoryCell" id="sLL-Ru-o65" customClass="RepositoryCell" customModule="GithubDemoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="96.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sLL-Ru-o65" id="56l-7c-bGA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="138.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIj-nh-vKB">
-                                                    <rect key="frame" x="16" y="24" width="70" height="70"/>
+                                                    <rect key="frame" x="16" y="16" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="JIj-nh-vKB" secondAttribute="height" multiplier="1:1" id="YTK-jX-GsX"/>
                                                         <constraint firstAttribute="height" constant="70" id="tS7-9v-6K9"/>
@@ -46,42 +46,32 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="repo name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-PU-E5q" userLabel="repo name">
-                                                    <rect key="frame" x="107" y="24" width="101" height="26.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="repo name " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-PU-E5q" userLabel="repo name">
+                                                    <rect key="frame" x="107" y="16" width="106.5" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-00-vP4">
-                                                    <rect key="frame" x="107" y="58.5" width="173" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-00-vP4">
+                                                    <rect key="frame" x="107" y="50.5" width="98.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vam-OG-3Ts">
-                                                    <rect key="frame" x="20" y="106" width="80.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="KbG-00-vP4" secondAttribute="trailing" constant="134" id="78d-9o-cTq"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vam-OG-3Ts" secondAttribute="trailing" constant="4" id="7rx-9O-uc5"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KbG-00-vP4" secondAttribute="trailing" constant="4" id="78d-9o-cTq"/>
                                                 <constraint firstItem="JIj-nh-vKB" firstAttribute="leading" secondItem="56l-7c-bGA" secondAttribute="leading" constant="16" id="HZ6-N7-fff"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kgh-PU-E5q" secondAttribute="trailing" constant="4" id="O15-I2-aGI"/>
-                                                <constraint firstItem="Vam-OG-3Ts" firstAttribute="top" secondItem="JIj-nh-vKB" secondAttribute="bottom" constant="12" id="RL5-Hk-YVl"/>
-                                                <constraint firstItem="Vam-OG-3Ts" firstAttribute="leading" secondItem="56l-7c-bGA" secondAttribute="leadingMargin" id="RSp-Qu-Z29"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KbG-00-vP4" secondAttribute="bottom" constant="24" id="Tpf-Qq-n1H"/>
                                                 <constraint firstItem="KbG-00-vP4" firstAttribute="top" secondItem="kgh-PU-E5q" secondAttribute="bottom" constant="8" id="bCe-9x-czS"/>
-                                                <constraint firstItem="JIj-nh-vKB" firstAttribute="top" secondItem="56l-7c-bGA" secondAttribute="top" constant="24" id="dZc-x7-3OB"/>
+                                                <constraint firstItem="JIj-nh-vKB" firstAttribute="top" secondItem="56l-7c-bGA" secondAttribute="top" constant="16" id="dZc-x7-3OB"/>
                                                 <constraint firstItem="kgh-PU-E5q" firstAttribute="leading" secondItem="JIj-nh-vKB" secondAttribute="trailing" constant="21" id="fLo-Bo-FgN"/>
-                                                <constraint firstAttribute="bottom" secondItem="Vam-OG-3Ts" secondAttribute="bottom" constant="12" id="jxe-Z9-vhW"/>
                                                 <constraint firstItem="KbG-00-vP4" firstAttribute="leading" secondItem="kgh-PU-E5q" secondAttribute="leading" id="piX-bi-JsF"/>
                                                 <constraint firstItem="kgh-PU-E5q" firstAttribute="top" secondItem="JIj-nh-vKB" secondAttribute="top" id="rLk-xw-Jra"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="Vam-OG-3Ts" id="dXo-TR-qRX"/>
                                             <outlet property="ownerLabel" destination="KbG-00-vP4" id="V8l-Wc-cad"/>
                                             <outlet property="repoImageView" destination="JIj-nh-vKB" id="Zab-rh-k3q"/>
                                             <outlet property="repositoryNameLabel" destination="kgh-PU-E5q" id="34X-A9-A5m"/>
