@@ -5,7 +5,7 @@
 //  Created by Ahmed Hamdy on 11/12/2020.
 //
 
-@interface Owner : NSObject <NSCoding, NSCopying>
+@interface Owner : NSObject
 
 @property (nonatomic, assign) double ownerIdentifier;
 @property (nonatomic, strong) NSString *organizationsUrl;
@@ -27,6 +27,5 @@
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
-- (NSDictionary *)dictionaryRepresentation;
 
 @end

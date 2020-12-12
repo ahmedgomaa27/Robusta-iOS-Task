@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--GitHub Repositories-->
+        <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="GithubDemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tx2-Lw-svR" secondAttribute="bottom" id="ybn-9g-hHb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GitHub Repositories" id="Jjd-MI-xL7"/>
+                    <navigationItem key="navigationItem" id="Jjd-MI-xL7"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="kwO-Wz-dhS" id="3hF-O5-7eg"/>
                         <outlet property="repositoriesTableView" destination="tx2-Lw-svR" id="oqm-C6-Ulj"/>

@@ -18,6 +18,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Github Repositories"
         presenter = ListViewPresenter(view: self)
         setupSearchController()
         presenter.fetchReposData()
