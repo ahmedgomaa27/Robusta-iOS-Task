@@ -54,4 +54,18 @@ class ListViewPresenter {
         filterModel.append(contentsOf: dataModel)
         view.refreshView()
     }
+
+    func getRepositoryDetails(url: String) {
+        view.showLoading()
+        NetworkManager.getRepositoryDetails(fromUrl: url) { [weak self] (response) in
+            guard let self = self else {return}
+            self.view.hideLoading()
+            if let repository = response  {
+                self.view.updateDetailsView(repository: repository)
+            } else {
+                self.view.showNetworkError()
+            }
+
+        }
+    }
 }

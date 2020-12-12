@@ -12,4 +12,15 @@ protocol ListViewDelegate: class {
     func hideLoading()
     func refreshView()
     func showNetworkError()
+    func updateDetailsView(repository: Repository)
+}
+
+extension ListViewDelegate {
+    func refreshView() {
+
+    }
+
+    func updateDetailsView(repository: Repository) {
+        
+    }
 }

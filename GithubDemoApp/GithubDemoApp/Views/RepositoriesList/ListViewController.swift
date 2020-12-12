@@ -43,6 +43,14 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(item: presenter.getItem(for: indexPath.row))
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repoUrl = presenter.getItem(for: indexPath.row).url ?? ""
+        if let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RepositoryDetailsController") as? RepositoryDetailsController {
+            detailsVC.repositoryUrl = repoUrl
+            navigationController?.pushViewController(detailsVC, animated: true)
+        }
+    }
 }
 
 //MARK:- search bar delegate
