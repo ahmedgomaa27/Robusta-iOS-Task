@@ -11,4 +11,5 @@
 @interface NetworkManager : NSObject
 +(void) getRepositoriesWithCompletion: (void(^)(NSArray<Repository*>* list)) completion;
 +(void) getRepositoryDateFromUrl:(NSString*) urlString completion: (void(^)(NSString* dateString)) completion;
++(void) getRepositoryDetailsFromUrl:(NSString*) urlString completion: (void(^)(Repository* repository)) completion;
 @end
