@@ -15,29 +15,27 @@ class RepositoryDetailsController: UIViewController {
     @IBOutlet weak var forksValueLabel: UILabel!
     @IBOutlet weak var openIssuesLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
-    var presenter: ListViewPresenter!
-    var repositoryUrl: String = ""
-    var repositoryWebSite: String?
+    var repository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        presenter = ListViewPresenter(view: self)
-        presenter.getRepositoryDetails(url: repositoryUrl)
+        if let repository = repository {
+            updateUIView(repository: repository)
+        }
     }
-
 
     func updateUIView(repository: Repository) {
         getImage(url: repository.owner.avatarUrl)
+        title = repository.name
         descriptionLabel.text = repository.repositoryDescription
         starsValueLabel.text = getTextValue(for: repository.stargazersCount)
         forksValueLabel.text = getTextValue(for: repository.forksCount)
         openIssuesLabel.text = getTextValue(for: repository.openIssuesCount)
         languageLabel.text = repository.language
-        repositoryWebSite = repository.htmlUrl
     }
+
     func getImage(url: String) {
         ImageDownloader.loadImage(imageUrlPath: url) { (image) in
             DispatchQueue.main.async {
@@ -51,35 +49,9 @@ class RepositoryDetailsController: UIViewController {
     }
 
     @IBAction func visitWebSiteTapped(_ sender: UIButton) {
-        if let urlPath = repositoryWebSite, let url = URL(string: urlPath) {
+        if let urlPath = repository?.htmlUrl, let url = URL(string: urlPath) {
             let safariVC = SFSafariViewController(url: url)
             present(safariVC, animated: true, completion: nil)
         }
     }
-}
-
-//MARK:- presenter delegate
-extension RepositoryDetailsController: ListViewDelegate {
-    func showLoading() {
-        loadingIndicator.startAnimating()
-    }
-
-    func hideLoading() {
-        loadingIndicator.stopAnimating()
-    }
-
-
-    func showNetworkError() {
-        let alert = UIAlertController(title: "Error", message: "Something went wrong, please try again later", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Reload",
-                                      style: UIAlertAction.Style.default,
-                                      handler: { _ in
-                                        self.presenter.getRepositoryDetails(url: self.repositoryUrl)
-                                      }))
-        present(alert, animated: true, completion: nil)
-    }
-    func updateDetailsView(repository: Repository) {
-        updateUIView(repository: repository)
-    }
-
 }

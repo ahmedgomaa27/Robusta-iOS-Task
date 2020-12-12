@@ -57,9 +57,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let repoUrl = presenter.getItem(for: indexPath.row).url ?? ""
+        let repository = presenter.getItem(for: indexPath.row)
         if let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "RepositoryDetailsController") as? RepositoryDetailsController {
-            detailsVC.repositoryUrl = repoUrl
+            detailsVC.repository = repository
             navigationController?.pushViewController(detailsVC, animated: true)
         }
     }

@@ -16,10 +16,12 @@ class ListViewPresenter: NSObject {
 
     let pageSize: Int = 10
     //Search API needs any text to return resluts, so i set default value with apple
-    var searchKeyWord = "apple"
+    var searchKeyWord: String = ""
+    let defaultSearchKeyword: String = "apple"
 
     init(view: ListViewDelegate) {
         self.view = view
+        searchKeyWord = defaultSearchKeyword
     }
 
     @objc func fetchReposData() {
@@ -45,6 +47,11 @@ class ListViewPresenter: NSObject {
             perform(#selector(fetchReposData), with: nil
                     , afterDelay: 0.5)
         }
+
+        if keyWord.count == 0 {
+            searchKeyWord = defaultSearchKeyword
+            fetchReposData()
+        }
     }
 
     func handleResponse(list: [Repository]?) {
@@ -52,12 +59,18 @@ class ListViewPresenter: NSObject {
         if let reposList = list {
             self.dataModel.removeAll()
             self.listingModel.removeAll()
-            if reposList.count > 0 {
-                self.dataModel.append(contentsOf: reposList)
-                self.listingModel.append(contentsOf: reposList[0...self.pageSize - 1])
-                self.view.refreshView()
-            } else {
+
+            switch reposList.count {
+            case 0:
                 self.view.showNoResultsView()
+            case 1...(pageSize - 1):
+                self.dataModel.append(contentsOf: reposList)
+                self.listingModel.append(contentsOf: reposList)
+                self.view.refreshView()
+            default:
+                self.dataModel.append(contentsOf: reposList)
+                self.listingModel.append(contentsOf: reposList[0..<self.pageSize])
+                self.view.refreshView()
             }
         } else {
             self.view.showNetworkError()
@@ -66,7 +79,7 @@ class ListViewPresenter: NSObject {
 
     func clearSearch() {
         listingModel.removeAll()
-        searchKeyWord = "apple"
+        searchKeyWord = defaultSearchKeyword
         fetchReposData()
     }
 
