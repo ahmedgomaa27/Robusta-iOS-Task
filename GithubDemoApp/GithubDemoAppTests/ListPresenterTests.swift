@@ -10,13 +10,15 @@ import XCTest
 
 class ListPresenterTests: XCTestCase {
 
-
-    let promise = XCTestExpectation(description: "success API Call: 200")
-    var presenter: ListViewPresenter?
+    var presenter: ListViewPresenter!
+    let mockedService = MockNetworkManager()
+    let listViewDelegate = MockListViewDelegate()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        presenter = ListViewPresenter(view: self)
+        mockedService.setup()
+        presenter = ListViewPresenter(view: listViewDelegate, service: mockedService)
+        presenter.fetchReposData()
     }
 
     override func tearDownWithError() throws {
@@ -24,32 +26,36 @@ class ListPresenterTests: XCTestCase {
         presenter = nil
     }
 
-    func testPublicReposAPI() {
-        presenter?.fetchReposData()
-        wait(for: [promise], timeout: 1.0)
+    func testNumberOfItems() {
+        presenter.fetchReposData()
+        XCTAssertEqual(presenter.getNumberOfItems(), mockedService.mockedList.count)
     }
 
-}
-
-//MARK:- presenter delegate
-extension ListPresenterTests: ListViewDelegate {
-    func showNoResultsView() {
-        
+    func testClearSearch() {
+        presenter.clearSearch()
+        XCTAssertEqual(presenter.getNumberOfItems(), mockedService.mockedList.count)
     }
 
-    func showLoading() {
-
+    func testRefreshView() {
+        XCTAssertTrue(listViewDelegate.refreshViewCalled)
     }
 
-    func hideLoading() {
-
+    func testLoading() {
+        XCTAssertFalse(listViewDelegate.isLoading)
     }
 
-    func showNetworkError() {
-
+    func testSearch() {
+        presenter.search(with: mockedService.mockedList.first?.name ?? "Repo 1")
+        XCTAssertEqual(presenter.getNumberOfItems(), mockedService.mockedList.count)
     }
 
-    func refreshView() {
-        promise.fulfill()
+    func testGetItem() {
+        XCTAssertEqual(presenter.getItem(for: 0).name, mockedService.mockedList[0].name)
     }
+
+    func testEmptySearch() {
+        presenter.search(with: "")
+        XCTAssertEqual(presenter.getNumberOfItems(), mockedService.mockedList.count)
+    }
+
 }
