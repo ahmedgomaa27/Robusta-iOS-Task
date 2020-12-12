@@ -11,6 +11,7 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var repositoriesTableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noResultsLabel: UILabel!
 
     let searchController = UISearchController()
     var presenter: ListViewPresenter!
@@ -38,7 +39,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         print(indexPaths)
         for indexPath in indexPaths {
-            if indexPath.row >= presenter.filterModel.count - 1 {
+            if indexPath.row >= presenter.listingModel.count - 1 {
                 presenter.loadMore()
                 break
             }
@@ -86,6 +87,8 @@ extension ListViewController: ListViewDelegate {
     }
 
     func refreshView() {
+        noResultsLabel.isHidden = true
+        repositoriesTableView.isHidden = false
         repositoriesTableView.reloadData()
     }
 
@@ -97,5 +100,10 @@ extension ListViewController: ListViewDelegate {
                                         self.presenter.fetchReposData()
                                       }))
         present(alert, animated: true, completion: nil)
+    }
+
+    func showNoResultsView() {
+        noResultsLabel.isHidden = false
+        repositoriesTableView.isHidden = true
     }
 }

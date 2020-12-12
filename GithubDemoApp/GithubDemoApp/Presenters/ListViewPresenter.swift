@@ -7,59 +7,72 @@
 
 import Foundation
 
-class ListViewPresenter {
+class ListViewPresenter: NSObject {
 
     weak var view: ListViewDelegate!
     var dataModel: [Repository] = []
-    var filterModel: [Repository] = []
+    var listingModel: [Repository] = []
+    let service = NetworkManager()
 
     let pageSize: Int = 10
+    //Search API needs any text to return resluts, so i set default value with apple
+    var searchKeyWord = "apple"
 
     init(view: ListViewDelegate) {
         self.view = view
     }
 
-    func fetchReposData() {
+    @objc func fetchReposData() {
         view.showLoading()
-        NetworkManager.getRepositoriesWithCompletion { [weak self] (list) in
+        service.getRepositoriesWithName(searchKeyWord) { [weak self] (list) in
             guard let self = self else {return}
-            self.view.hideLoading()
-            if let reposList = list {
-                self.dataModel.append(contentsOf: reposList)
-                self.filterModel.append(contentsOf: reposList[0...self.pageSize - 1])
-                self.view.refreshView()
-            } else {
-                self.view.showNetworkError()
-            }
+            self.handleResponse(list: list)
         }
     }
 
     func getItem(for index: Int) -> Repository {
-        filterModel[index]
+        listingModel[index]
     }
 
     func getNumberOfItems() -> Int {
-        filterModel.count
+        listingModel.count
     }
 
     func search(with keyWord: String) {
-        filterModel.removeAll()
-        filterModel.append(contentsOf: dataModel)
         if keyWord.count > 1 {
-            filterModel = filterModel.filter({$0.name.lowercased().contains(keyWord.lowercased())})
+            searchKeyWord = keyWord
+            NSObject.cancelPreviousPerformRequests(withTarget: self)
+            perform(#selector(fetchReposData), with: nil
+                    , afterDelay: 0.5)
         }
-        view.refreshView()
+    }
+
+    func handleResponse(list: [Repository]?) {
+        view.hideLoading()
+        if let reposList = list {
+            self.dataModel.removeAll()
+            self.listingModel.removeAll()
+            if reposList.count > 0 {
+                self.dataModel.append(contentsOf: reposList)
+                self.listingModel.append(contentsOf: reposList[0...self.pageSize - 1])
+                self.view.refreshView()
+            } else {
+                self.view.showNoResultsView()
+            }
+        } else {
+            self.view.showNetworkError()
+        }
     }
 
     func clearSearch() {
-        filterModel.removeAll()
-        filterModel.append(contentsOf: dataModel)
-        view.refreshView()
+        listingModel.removeAll()
+        searchKeyWord = "apple"
+        fetchReposData()
     }
 
     func getRepositoryDetails(url: String) {
         view.showLoading()
-        NetworkManager.getRepositoryDetails(fromUrl: url) { [weak self] (response) in
+        service.getRepositoryDetails(fromUrl: url) { [weak self] (response) in
             guard let self = self else {return}
             self.view.hideLoading()
             if let repository = response {
@@ -67,15 +80,14 @@ class ListViewPresenter {
             } else {
                 self.view.showNetworkError()
             }
-
         }
     }
 
     func loadMore() {
-        if dataModel.count > filterModel.count {
-            let firstIndex: Int = filterModel.count
+        if dataModel.count > listingModel.count {
+            let firstIndex: Int = listingModel.count
             let lastIndex: Int = firstIndex + pageSize - 1
-            filterModel.append(contentsOf: dataModel[firstIndex...lastIndex])
+            listingModel.append(contentsOf: dataModel[firstIndex...lastIndex])
             view.refreshView()
         }
     }

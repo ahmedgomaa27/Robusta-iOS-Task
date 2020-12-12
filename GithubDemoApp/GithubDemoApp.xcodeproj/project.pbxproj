@@ -15,7 +15,6 @@
 		8C6433982583EA310020F386 /* Owner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433972583EA310020F386 /* Owner.m */; };
 		8C64339E2583EAE50020F386 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C64339D2583EAE50020F386 /* Repository.m */; };
 		8C6433BF258513150020F386 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433BE258513150020F386 /* ListPresenterTests.swift */; };
-		8C6433C425853C6C0020F386 /* DateUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6433C325853C6C0020F386 /* DateUtilsTests.swift */; };
 		8C7D3E79258186B100EC3259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E78258186B100EC3259 /* AppDelegate.swift */; };
 		8C7D3E7B258186B100EC3259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */; };
 		8C7D3E7D258186B100EC3259 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3E7C258186B100EC3259 /* ListViewController.swift */; };
@@ -57,7 +56,6 @@
 		8C64339D2583EAE50020F386 /* Repository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		8C6433A22583EAEF0020F386 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		8C6433BE258513150020F386 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
-		8C6433C325853C6C0020F386 /* DateUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilsTests.swift; sourceTree = "<group>"; };
 		8C7D3E75258186B100EC3259 /* GithubDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7D3E78258186B100EC3259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		8C7D3E8E258186B700EC3259 /* GithubDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C6433C325853C6C0020F386 /* DateUtilsTests.swift */,
 				8C6433BE258513150020F386 /* ListPresenterTests.swift */,
 				8C7D3E8F258186B700EC3259 /* ListViewControllerTests.swift */,
 				8C7D3E91258186B700EC3259 /* Info.plist */,
@@ -397,7 +394,6 @@
 			files = (
 				8C6433BF258513150020F386 /* ListPresenterTests.swift in Sources */,
 				8C7D3E90258186B700EC3259 /* ListViewControllerTests.swift in Sources */,
-				8C6433C425853C6C0020F386 /* DateUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

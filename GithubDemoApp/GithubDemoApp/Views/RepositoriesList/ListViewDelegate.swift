@@ -13,6 +13,7 @@ protocol ListViewDelegate: class {
     func refreshView()
     func showNetworkError()
     func updateDetailsView(repository: Repository)
+    func showNoResultsView()
 }
 
 extension ListViewDelegate {

@@ -98,21 +98,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results matchs search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-Hz-Os6">
+                                <rect key="frame" x="97.5" y="436.5" width="219.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tx2-Lw-svR" secondAttribute="trailing" id="8aR-Cd-POW"/>
+                            <constraint firstItem="xKq-Hz-Os6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="C2n-sP-C35"/>
                             <constraint firstItem="kwO-Wz-dhS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="N1W-aX-gBI"/>
                             <constraint firstItem="tx2-Lw-svR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R5d-AZ-mzV"/>
                             <constraint firstItem="kwO-Wz-dhS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dd4-AI-EAd"/>
                             <constraint firstItem="tx2-Lw-svR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hjq-p4-MCx"/>
+                            <constraint firstItem="xKq-Hz-Os6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rL8-q0-eXv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tx2-Lw-svR" secondAttribute="bottom" id="ybn-9g-hHb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jjd-MI-xL7"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="kwO-Wz-dhS" id="3hF-O5-7eg"/>
+                        <outlet property="noResultsLabel" destination="xKq-Hz-Os6" id="gdW-Dp-aCr"/>
                         <outlet property="repositoriesTableView" destination="tx2-Lw-svR" id="oqm-C6-Ulj"/>
                     </connections>
                 </viewController>
