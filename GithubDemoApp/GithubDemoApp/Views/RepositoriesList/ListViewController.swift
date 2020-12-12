@@ -34,7 +34,17 @@ class ListViewController: UIViewController {
 }
 
 //MARK:- table view delegate
-extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print(indexPaths)
+        for indexPath in indexPaths {
+            if indexPath.row >= presenter.filterModel.count - 1 {
+                presenter.loadMore()
+                break
+            }
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getNumberOfItems()
     }

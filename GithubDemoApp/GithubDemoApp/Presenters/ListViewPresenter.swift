@@ -13,6 +13,8 @@ class ListViewPresenter {
     var dataModel: [Repository] = []
     var filterModel: [Repository] = []
 
+    let pageSize: Int = 10
+
     init(view: ListViewDelegate) {
         self.view = view
     }
@@ -24,7 +26,7 @@ class ListViewPresenter {
             self.view.hideLoading()
             if let reposList = list {
                 self.dataModel.append(contentsOf: reposList)
-                self.filterModel.append(contentsOf: reposList)
+                self.filterModel.append(contentsOf: reposList[0...self.pageSize - 1])
                 self.view.refreshView()
             } else {
                 self.view.showNetworkError()
@@ -66,6 +68,15 @@ class ListViewPresenter {
                 self.view.showNetworkError()
             }
 
+        }
+    }
+
+    func loadMore() {
+        if dataModel.count > filterModel.count {
+            let firstIndex: Int = filterModel.count
+            let lastIndex: Int = firstIndex + pageSize - 1
+            filterModel.append(contentsOf: dataModel[firstIndex...lastIndex])
+            view.refreshView()
         }
     }
 }
