@@ -12,15 +12,16 @@ class ListViewPresenter: NSObject {
     weak var view: ListViewDelegate!
     var dataModel: [Repository] = []
     var listingModel: [Repository] = []
-    let service = NetworkManager()
+    let service: NetworkProtocol!
 
     let pageSize: Int = 10
     //Search API needs any text to return resluts, so i set default value with apple
     var searchKeyWord: String = ""
     let defaultSearchKeyword: String = "apple"
 
-    init(view: ListViewDelegate) {
+    init(view: ListViewDelegate, service: NetworkProtocol = NetworkManager()) {
         self.view = view
+        self.service = service
         searchKeyWord = defaultSearchKeyword
     }
 

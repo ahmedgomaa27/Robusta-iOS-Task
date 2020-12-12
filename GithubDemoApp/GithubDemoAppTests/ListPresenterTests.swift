@@ -13,7 +13,6 @@ class ListPresenterTests: XCTestCase {
 
     let promise = XCTestExpectation(description: "success API Call: 200")
     var presenter: ListViewPresenter?
-    let repoUrl = "https://api.github.com/users/mojombo"
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -30,15 +29,14 @@ class ListPresenterTests: XCTestCase {
         wait(for: [promise], timeout: 1.0)
     }
 
-    func testDetailsAPI() {
-        presenter?.getRepositoryDetails(url: repoUrl)
-        wait(for: [promise], timeout: 1.0)
-    }
-
 }
 
 //MARK:- presenter delegate
 extension ListPresenterTests: ListViewDelegate {
+    func showNoResultsView() {
+        
+    }
+
     func showLoading() {
 
     }
@@ -52,10 +50,6 @@ extension ListPresenterTests: ListViewDelegate {
     }
 
     func refreshView() {
-        promise.fulfill()
-    }
-
-    func updateDetailsView(repository: Repository) {
         promise.fulfill()
     }
 }

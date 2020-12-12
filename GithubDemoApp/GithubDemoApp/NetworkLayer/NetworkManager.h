@@ -6,8 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Repository.h"
+#import "NetworkProtocol.h"
 
-@interface NetworkManager : NSObject
--(void) getRepositoriesWithName:(NSString*) name completion: (void(^)(NSArray<Repository*>* list)) completion;
+@interface NetworkManager : NSObject<NetworkProtocol>
 @end

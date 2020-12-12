@@ -56,6 +56,7 @@
 		8C64339D2583EAE50020F386 /* Repository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		8C6433A22583EAEF0020F386 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		8C6433BE258513150020F386 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
+		8C6433D725855B2E0020F386 /* NetworkProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkProtocol.h; sourceTree = "<group>"; };
 		8C7D3E75258186B100EC3259 /* GithubDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7D3E78258186B100EC3259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7D3E7A258186B100EC3259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 			children = (
 				8C7D3EBF25818AD800EC3259 /* NetworkManager.m */,
 				8C7D3EC425818B0B00EC3259 /* NetworkManager.h */,
+				8C6433D725855B2E0020F386 /* NetworkProtocol.h */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
