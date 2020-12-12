@@ -49,30 +49,4 @@ NSString *const searchPath = @"search/repositories?q=";
     [task resume];
 }
 
--(void) getRepositoryDetailsFromUrl:(NSString*) urlString completion: (void(^)(Repository* repository)) completion {
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
-    NSURLSession *session =
-    [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-                                  delegate:nil
-                             delegateQueue:[NSOperationQueue mainQueue]];
-
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-                                            completionHandler:^(NSData * _Nullable data,
-                                                                NSURLResponse * _Nullable response,
-                                                                NSError * _Nullable error) {
-                                                if (!error) {
-                                                    NSError *jsonError = nil;
-                                                    NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];;
-
-                                                    Repository *repository = [Repository modelObjectWithDictionary:jsonDict];
-                                                    completion(repository);
-                                                } else {
-                                                    NSLog(@"An error occurred: %@", error.description);
-                                                }
-                                            }];
-    [task resume];
-}
-
 @end

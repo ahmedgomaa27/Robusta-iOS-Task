@@ -83,19 +83,6 @@ class ListViewPresenter: NSObject {
         fetchReposData()
     }
 
-    func getRepositoryDetails(url: String) {
-        view.showLoading()
-        service.getRepositoryDetails(fromUrl: url) { [weak self] (response) in
-            guard let self = self else {return}
-            self.view.hideLoading()
-            if let repository = response {
-                self.view.updateDetailsView(repository: repository)
-            } else {
-                self.view.showNetworkError()
-            }
-        }
-    }
-
     func loadMore() {
         if dataModel.count > listingModel.count {
             let firstIndex: Int = listingModel.count
