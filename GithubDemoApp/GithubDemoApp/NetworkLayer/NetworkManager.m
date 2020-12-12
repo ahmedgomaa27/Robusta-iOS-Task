@@ -27,7 +27,6 @@
                                                                 NSURLResponse * _Nullable response,
                                                                 NSError * _Nullable error) {
                                                 if (!error) {
-                                                    //TODO: need fix here
                                                     NSError *jsonError = nil;
                                                     NSArray * jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];;
 
