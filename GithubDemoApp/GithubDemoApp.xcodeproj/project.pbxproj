@@ -154,7 +154,6 @@
 				8C7D3EEB25819D1600EC3259 /* StoryBoards */,
 				8C7D3EEA25819D0600EC3259 /* Views */,
 				8C7D3ED62581926700EC3259 /* Models */,
-				8C7D3EE925819CF100EC3259 /* Presenters */,
 				8C7D3EB12581877200EC3259 /* NetworkLayer */,
 				8C7D3EB22581883F00EC3259 /* GithubDemoApp-Bridging-Header.h */,
 				8C7D3E78258186B100EC3259 /* AppDelegate.swift */,
@@ -198,14 +197,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8C7D3EE925819CF100EC3259 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				8C7D3EEF25819D9100EC3259 /* ListViewPresenter.swift */,
-			);
-			path = Presenters;
-			sourceTree = "<group>";
-		};
 		8C7D3EEA25819D0600EC3259 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +218,7 @@
 		8C7D3EF925819DB300EC3259 /* RepositoriesList */ = {
 			isa = PBXGroup;
 			children = (
+				8C7D3EEF25819D9100EC3259 /* ListViewPresenter.swift */,
 				8C7D3E7C258186B100EC3259 /* ListViewController.swift */,
 				8C7D3EF425819DA800EC3259 /* ListViewDelegate.swift */,
 				8C6433642583A1100020F386 /* RepositoryCell.swift */,

@@ -13,11 +13,10 @@ class ListViewPresenter: NSObject {
     var dataModel: [Repository] = []
     var listingModel: [Repository] = []
     let service: NetworkProtocol!
-
     let pageSize: Int = 10
     //Search API needs any text to return resluts, so i set default value with apple
-    var searchKeyWord: String = ""
     let defaultSearchKeyword: String = "apple"
+    var searchKeyWord: String = ""
 
     init(view: ListViewDelegate, service: NetworkProtocol = NetworkManager()) {
         self.view = view
