@@ -15,6 +15,7 @@ class ListViewController: UIViewController {
 
     let searchController = UISearchController()
     var presenter: ListViewPresenter!
+    var test: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ListViewController: UIViewController {
         presenter = ListViewPresenter(view: self)
         setupSearchController()
         presenter.fetchReposData()
+        print(test!)
     }
 
     func setupSearchController() {
