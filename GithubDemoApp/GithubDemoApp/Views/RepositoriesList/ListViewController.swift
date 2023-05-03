@@ -24,7 +24,7 @@ class ListViewController: UIViewController {
         presenter = ListViewPresenter(view: self)
         setupSearchController()
         presenter.fetchReposData()
-        print(test!)
+        print(test! + "")
     }
 
     func setupSearchController() {
